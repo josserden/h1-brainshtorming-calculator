@@ -1,0 +1,26 @@
+{{#each this}}
+
+  <li
+    class='list-group-item d-flex align-items-center text-capitalize border border-1 rounded bg-success px-4 py-2 text-dark bg-opacity-10 mb-3'
+  >{{description}}
+    <span class='fs-5 ms-1 history__money user-select-all'>{{amount}} &#8372;</span>
+    <button
+      type='button'
+      class='btn-close ms-auto history_delete'
+      data-id={{id}}
+      aria-label='Close'
+    ></button>
+  </li>
+
+{{/each}}
+
+{{!
+function renderOperation(data) {
+  const typeOperation = data.amount > 0 ? 'bg-success' : 'bg-danger';
+
+  const listItem = `<li class="list-group-item d-flex align-items-center text-capitalize border border-1 ${typeOperation} rounded
+bg-success px-4 py-2 text-dark bg-opacity-10 mb-3">${data.description} <span class="fs-5 ms-1 history__money user-select-all">${data.amount} &#8372;</span><button type="button" class="btn-close ms-auto history_delete" data-id="${data.id}" aria-label="Close"></button></li>`;
+
+  refs.historyList.insertAdjacentHTML('beforeend', listItem);
+}
+ }}
