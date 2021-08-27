@@ -20,7 +20,7 @@ const service = {
   },
 
   renderOperation(refs, template) {
-    return (refs.innerHTML = template(this.operation));
+    refs.innerHTML = template(this.operation);
   },
 
   renderFromLS(refs, template, key) {
